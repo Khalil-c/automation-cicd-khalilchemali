@@ -12,7 +12,8 @@ pipeline {
             steps {
                sh '''
                     cd frontend-project/
-                    npm install && npm run test:report:regression                   
+                    npm install && npm run test:report:regression  
+                                     
                 ''' 
                 archiveArtifacts allowEmptyArchive: true, artifacts: 'frontend-project/cypress/videos/**'
                 publishHTML([
